@@ -5,16 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PigeoNek0 · 个人主页</title>
   <meta name="description" content="PigeoNek0 的个人介绍页面" />
+  <script>
+    // 在渲染前先应用主题，避免闪烁
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- 顶部导航 -->
   <header class="site-header">
     <a class="logo" href="#hero">PigeoNek0</a>
-    <nav class="nav">
-      <a href="#about">关于我</a>
-      <a href="#contact">联系方式</a>
-    </nav>
+    <div class="header-right">
+      <nav class="nav">
+        <a href="#about">关于我</a>
+        <a href="#contact">联系方式</a>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="切换深浅色主题">
+        <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="theme-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+    </div>
   </header>
 
   <!-- 首屏 Hero -->
@@ -81,6 +111,17 @@
           <span class="contact-text">
             <span class="contact-label">GitHub</span>
             <span class="contact-value">github.com/PigeoNek0</span>
+          </span>
+        </a>
+
+        <!-- 电话 -->
+        <a class="contact-item" href="tel:+8615768564499">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+          <span class="contact-text">
+            <span class="contact-label">电话</span>
+            <span class="contact-value">+86 157 6856 4499</span>
           </span>
         </a>
       </div>

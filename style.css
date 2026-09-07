@@ -1,17 +1,36 @@
 /* ============ 主题变量 ============ */
 :root {
-  --bg: #f7f8fb;
-  --bg-accent: #eef0ff;
+  /* 浅色主题（默认，黑色强调） */
+  --bg: #f7f7f8;
+  --bg-accent: #ececee;
   --surface: #ffffff;
-  --text: #1c1f26;
-  --text-muted: #5b6270;
-  --border: #e6e8f0;
-  --primary: #4f46e5;
-  --primary-hover: #4338ca;
-  --primary-soft: rgba(79, 70, 229, 0.08);
+  --text: #141518;
+  --text-muted: #5b5f66;
+  --border: #e3e3e7;
+  --primary: #000000;
+  --primary-hover: #242424;
+  --on-primary: #ffffff;
+  --avatar-end: #3a3a3a;
+  --header-bg: rgba(255, 255, 255, 0.75);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
   --radius: 16px;
-  --shadow: 0 10px 30px rgba(28, 31, 38, 0.06);
   --max-width: 880px;
+}
+
+/* 深色主题（强调色反转为白色，保证可见） */
+[data-theme="dark"] {
+  --bg: #101014;
+  --bg-accent: #1d1d22;
+  --surface: #1a1a1f;
+  --text: #f2f2f4;
+  --text-muted: #a6aab2;
+  --border: #2c2c33;
+  --primary: #ffffff;
+  --primary-hover: #dcdcdc;
+  --on-primary: #101014;
+  --avatar-end: #6b6b6b;
+  --header-bg: rgba(16, 16, 20, 0.75);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* ============ 基础重置 ============ */
@@ -35,6 +54,7 @@ body {
   color: var(--text);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 a {
@@ -50,12 +70,19 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 24px;
+  padding: 14px 24px;
   max-width: var(--max-width);
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--header-bg);
   backdrop-filter: blur(12px);
   border-radius: 0 0 var(--radius) var(--radius);
+  transition: background-color 0.25s ease;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
 .logo {
@@ -77,6 +104,46 @@ a {
 
 .nav a:hover {
   color: var(--primary);
+}
+
+/* 主题切换按钮 */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.theme-icon {
+  width: 19px;
+  height: 19px;
+}
+
+/* 浅色主题显示月亮，深色主题显示太阳 */
+.icon-moon {
+  display: block;
+}
+.icon-sun {
+  display: none;
+}
+[data-theme="dark"] .icon-moon {
+  display: none;
+}
+[data-theme="dark"] .icon-sun {
+  display: block;
 }
 
 /* ============ Hero ============ */
@@ -103,9 +170,9 @@ a {
   justify-content: center;
   font-size: 40px;
   font-weight: 700;
-  color: #fff;
-  background: linear-gradient(135deg, var(--primary), #8b5cf6);
-  box-shadow: 0 12px 30px rgba(79, 70, 229, 0.3);
+  color: var(--on-primary);
+  background: linear-gradient(135deg, var(--primary), var(--avatar-end));
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
 .hero-name {
@@ -147,8 +214,8 @@ a {
 
 .btn-primary {
   background: var(--primary);
-  color: #fff;
-  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.28);
+  color: var(--on-primary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
 }
 
 .btn-primary:hover {
@@ -198,6 +265,7 @@ a {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 32px;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .about-card p {
@@ -225,7 +293,8 @@ a {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease,
+    background-color 0.25s ease;
 }
 
 .contact-item:hover {
