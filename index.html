@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PigeoNek0 · 个人主页</title>
+  <meta name="description" content="PigeoNek0 的个人介绍页面" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="site-header">
+    <a class="logo" href="#hero">PigeoNek0</a>
+    <nav class="nav">
+      <a href="#about">关于我</a>
+      <a href="#contact">联系方式</a>
+    </nav>
+  </header>
+
+  <!-- 首屏 Hero -->
+  <section id="hero" class="hero">
+    <div class="hero-inner">
+      <div class="avatar" aria-hidden="true">P</div>
+      <!-- TODO: 替换为你的名字 -->
+      <h1 class="hero-name">你的名字</h1>
+      <!-- TODO: 替换为你的身份 / 一句话标签 -->
+      <p class="hero-tagline">一名热爱技术、持续学习的开发者</p>
+      <p class="hero-intro">
+        <!-- TODO: 替换为一句简短的自我介绍 -->
+        你好，欢迎来到我的个人主页。这里记录了我的兴趣、经历与联系方式。
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">联系我</a>
+        <a class="btn btn-ghost" href="#about">了解更多</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于我 -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">关于我</h2>
+      <div class="about-card">
+        <p>
+          <!-- TODO: 替换为你的自我介绍，可分段 -->
+          这里是你的个人简介。可以介绍你的背景、擅长领域、正在做的事情、
+          兴趣爱好，以及你希望访客了解的任何信息。
+        </p>
+        <p>
+          例如：我目前专注于 Web 开发与开源项目，喜欢把想法变成可用的产品，
+          也乐于分享和与人协作。业余时间我喜欢阅读、运动和探索新技术。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系方式 -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">联系方式</h2>
+      <p class="section-subtitle">欢迎通过以下方式与我取得联系</p>
+
+      <div class="contact-list">
+        <!-- 邮箱 -->
+        <a class="contact-item" href="mailto:your-email@example.com">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v1.6l8 5 8-5V7l-8 5-8-5z"/>
+          </svg>
+          <span class="contact-text">
+            <span class="contact-label">邮箱</span>
+            <!-- TODO: 替换为你的邮箱 -->
+            <span class="contact-value">your-email@example.com</span>
+          </span>
+        </a>
+
+        <!-- GitHub -->
+        <a class="contact-item" href="https://github.com/PigeoNek0" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/>
+          </svg>
+          <span class="contact-text">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">github.com/PigeoNek0</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> PigeoNek0 · 保留所有权利</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
