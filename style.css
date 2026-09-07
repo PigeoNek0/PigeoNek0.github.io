@@ -74,6 +74,7 @@ a {
   max-width: var(--max-width);
   margin: 0 auto;
   background: var(--header-bg);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border-radius: 0 0 var(--radius) var(--radius);
   transition: background-color 0.25s ease;
@@ -209,7 +210,8 @@ a {
   border-radius: 999px;
   font-size: 15px;
   font-weight: 600;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-primary {
